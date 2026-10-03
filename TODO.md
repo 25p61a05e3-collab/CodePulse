@@ -1,0 +1,9 @@
+
+
+## Master-prompt upgrade outcomes
+
+- Route live analysis through a modular Express backend that fetches GitHub metadata, default branch, languages, recursive tree, prioritized source/config/dependency/documentation/testing/CI files, and relevant content with maximum file count, file size, total byte, binary, ignored-directory, timeout, and large-repository safeguards; cache results by repository commit SHA.
+- Compute Code Quality, Architecture, Security, Dependencies, Documentation, Testing, and Maintainability from actual bounded repository evidence using configurable 20/15/20/10/10/15/10 weights; include score status, commit SHA, limitations, structured evidence, severity, file, line where available, confidence, recommendation, and source labels without fabricating vulnerabilities, advisories, coverage, or paths.
+- Provide provider-agnostic AI management for Ollama, Grok/xAI, Gemini, OpenAI, Anthropic, OpenRouter, and custom OpenAI-compatible APIs; require user-provided cloud keys, keep keys server-side and masked, support configure/test/activate/remove, never silently switch providers or call paid AI, and remain usable in deterministic evidence mode without an AI provider.
+- Expose clean backend boundaries for health, repository analysis, Ask CodePulse, report, repository snapshot, provider catalog, provider listing, provider testing, provider activation, and provider removal; preserve the existing UI while routing repository-aware Q&A through the backend with evidence-backed fallback.
+- Validate the upgrade with client/server typecheck, unit tests for URL parsing, scoring, dependency parsing, test detection, security heuristics, provider validation, Demo Mode, build, Preview health, route manifest, real public GitHub analysis, cache reuse, and responsive Settings/provider UI.
