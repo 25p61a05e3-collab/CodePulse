@@ -1,96 +1,396 @@
-# CodePulse
+# ⚡ CodePulse
 
-> Understand the health of your codebase in minutes.
+### Understand the health of your codebase in minutes.
 
-CodePulse is an evidence-first GitHub repository intelligence platform. Enter a public repository URL and CodePulse fetches a bounded repository snapshot, analyzes its structure and relevant text files, computes a transparent developer-health score, and surfaces findings you can trace back to files. Optional AI recommendations and Q&A use a user-selected provider; CodePulse remains usable without a paid AI API.
+[![Live Demo](https://img.shields.io/badge/Live-Demo-00C853?style=for-the-badge)](https://codepulse-sandarsh.netlify.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge\&logo=github)](https://github.com/25p61a05e3-collab/CodePulse)
 
-## Product features
+**CodePulse** is an AI-powered GitHub repository intelligence platform that analyzes a codebase and turns its structure, dependencies, security signals, testing, documentation, and maintainability into an actionable engineering health report.
 
-The existing dark-first developer-tool interface includes the landing flow, progressive analysis state, dashboard, repository analysis workspace, interactive architecture map, security signals, dependency inventory, testing gaps, documentation and maintainability signals, file explorer, report view, Ask CodePulse, demo fallback, responsive behavior, and settings.
+Instead of spending hours manually exploring an unfamiliar repository, CodePulse gives developers a structured view of **what is healthy, what needs attention, and where to look next.**
 
-Live analysis is now server-backed. The Express service fetches repository metadata, languages, the recursive tree, and prioritized text files while enforcing ignored directories, file-size limits, maximum file count, binary detection, and a total byte budget. Reports are cached by repository commit SHA during the server session.
+---
 
-Every result carries a source such as `GitHub API data`, `Static repository analysis`, `Heuristic analysis`, `AI-generated recommendation`, or `Demo data`. Security signals are potential risks for manual review, not confirmed vulnerabilities or a certification. Dependency versions are not presented as advisories when an advisory database is unavailable. Testing is labelled `Estimated` or `Unavailable`; CodePulse never fabricates runtime coverage.
+## 🚀 Live Demo
 
-## Run locally
+**Try CodePulse:**
+https://codepulse-sandarsh.netlify.app/
+
+**Source Code:**
+https://github.com/25p61a05e3-collab/CodePulse
+
+---
+
+## 🎯 Why CodePulse?
+
+Understanding an unfamiliar repository can take hours.
+
+You usually need to inspect:
+
+* Project structure
+* Dependencies
+* Source files
+* Security configuration
+* Tests
+* Documentation
+* Architecture
+* Maintainability
+* Code quality
+
+CodePulse brings these signals together into one developer-focused dashboard.
+
+### The goal
+
+> **Turn repository complexity into engineering visibility.**
+
+---
+
+## ✨ Features
+
+### 📊 Repository Health Score
+
+Get an overall health score based on multiple engineering signals.
+
+CodePulse evaluates areas including:
+
+* Code Quality
+* Architecture
+* Security
+* Dependencies
+* Documentation
+* Testing
+* Maintainability
+
+---
+
+### 🏗️ Architecture Intelligence
+
+Automatically inspect repository structure and identify important architectural patterns.
+
+Understand:
+
+* Major application layers
+* Frontend/backend separation
+* Important directories
+* Entry points
+* Configuration files
+* Structural relationships
+
+---
+
+### 🔐 Security Analysis
+
+Identify common security signals and potentially risky patterns.
+
+Examples include:
+
+* Exposed secrets
+* Suspicious configuration
+* Unsafe patterns
+* Security-sensitive files
+* Environment configuration issues
+
+---
+
+### 📦 Dependency Analysis
+
+Understand the dependency landscape of a repository.
+
+CodePulse analyzes:
+
+* Package manifests
+* Dependency counts
+* Runtime dependencies
+* Development dependencies
+* Potential dependency concerns
+
+---
+
+### 🧪 Testing Analysis
+
+Get visibility into the testing maturity of a repository.
+
+CodePulse looks for:
+
+* Test directories
+* Test files
+* Testing frameworks
+* Test configuration
+* Evidence of automated testing
+
+---
+
+### 📚 Documentation Analysis
+
+Evaluate whether a repository provides the documentation developers need.
+
+Signals include:
+
+* README presence
+* Project documentation
+* Configuration documentation
+* Setup information
+* Developer guidance
+
+---
+
+### 🛠️ Maintainability Analysis
+
+Identify structural signals that can make a codebase harder to maintain.
+
+CodePulse combines repository evidence with engineering heuristics to surface actionable findings.
+
+---
+
+### 🤖 AI-Powered Insights
+
+Use AI to turn repository evidence into understandable engineering recommendations.
+
+The platform is designed around **evidence-first analysis** rather than asking an AI to blindly guess what exists inside a repository.
+
+---
+
+### 🔑 Bring Your Own AI Key
+
+CodePulse supports a BYOK-style AI workflow for multiple providers.
+
+Supported provider integrations include:
+
+* Ollama
+* OpenAI
+* Google Gemini
+* Anthropic
+* Grok / xAI
+* OpenRouter
+* Custom OpenAI-compatible providers
+
+Users can select their preferred provider/model and use their own API credentials.
+
+> **Security note:** When using client-side BYOK functionality, API keys are entered directly in the browser environment. Do not use production secrets in a public demo unless you understand the associated risks.
+
+---
+
+## 🔎 Evidence-Based Findings
+
+One of the core ideas behind CodePulse is that analysis should be connected to repository evidence.
+
+Instead of simply saying:
+
+> "Your project has poor testing."
+
+CodePulse can point toward the repository signals behind the finding.
+
+This makes the analysis more useful for developers who want to investigate and improve their codebase.
+
+---
+
+## 🖥️ Developer-Focused UI
+
+CodePulse uses a dark-first developer-tool interface designed around:
+
+* Clear information hierarchy
+* Engineering dashboards
+* Status indicators
+* Repository exploration
+* Evidence cards
+* Architecture visualization
+* Responsive layouts
+
+The goal is to make repository analysis feel like a real engineering product rather than a generic AI chatbot.
+
+---
+
+## 🧠 How It Works
+
+```text
+GitHub Repository
+       │
+       ▼
+Repository Discovery
+       │
+       ▼
+File & Structure Analysis
+       │
+       ├── Architecture
+       ├── Dependencies
+       ├── Security
+       ├── Testing
+       ├── Documentation
+       ├── Code Quality
+       └── Maintainability
+       │
+       ▼
+Engineering Health Score
+       │
+       ▼
+Evidence + Findings
+       │
+       ▼
+AI Recommendations
+       │
+       ▼
+Actionable Repository Report
+```
+
+---
+
+## 🧰 Tech Stack
+
+### Frontend
+
+* React
+* Vite
+* JavaScript / TypeScript
+* Tailwind CSS
+* Modern component-based UI
+
+### Backend / Analysis
+
+* Node.js
+* Express
+* GitHub API
+* Repository analysis engine
+
+### AI
+
+* Ollama
+* OpenAI
+* Google Gemini
+* Anthropic
+* Grok / xAI
+* OpenRouter
+* OpenAI-compatible APIs
+
+### Deployment
+
+* Netlify
+
+---
+
+## 📁 Project Structure
+
+```text
+CodePulse/
+│
+├── client/
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── ...
+│
+├── server/
+│   ├── src/
+│   ├── package.json
+│   └── ...
+│
+├── package.json
+├── README.md
+└── ...
+```
+
+---
+
+## ⚙️ Local Development
+
+### 1. Clone the repository
 
 ```bash
+git clone https://github.com/25p61a05e3-collab/CodePulse.git
+cd CodePulse
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+Then install dependencies for the client/server if required by the project structure.
+
+### 3. Start the development environment
+
+Use the project scripts provided in `package.json`.
+
+For the frontend:
+
+```bash
+cd client
 npm install
 npm run dev
 ```
 
-`npm run dev` starts the Vite client on `http://localhost:3000` and the Express API on `http://localhost:4000`. Vite proxies `/api/*` to the API service. The API can also be run separately with `npm run server`.
+The Vite development server will start locally.
 
-Run validation with:
+---
 
-```bash
-npm run typecheck
-npm test
-npm run build
-```
+## 🌐 Deployment
 
-## GitHub access
+The current production frontend is deployed on Netlify.
 
-Public repositories work without a GitHub token, but unauthenticated GitHub requests are rate-limited. For a local or hosted server, copy `.env.example` to `.env` and optionally set `GITHUB_TOKEN`. The token remains server-side and is never exposed to the client bundle.
+### Production
 
-The bounded fetch ignores `node_modules`, `.git`, `dist`, `build`, `coverage`, `vendor`, `target`, `__pycache__`, `.next`, and other generated directories. It prioritizes source files, package manifests, configuration, tests, documentation, CI/CD, and Docker files.
+https://codepulse-sandarsh.netlify.app/
 
-## AI providers and BYOK
-
-Settings → AI Providers supports real provider adapters and a test → discover models → select → activate flow:
-
-- Ollama for free local inference, including a configurable local base URL and model.
-- Grok / xAI, Google Gemini, OpenAI, Anthropic, OpenRouter, and custom OpenAI-compatible APIs.
-
-Ollama uses its local `/api/tags` and `/api/generate` contract. OpenAI, xAI, OpenRouter, and custom providers use the compatible `/models` and `/chat/completions` contract. Gemini uses the official `models` and `generateContent` contract with its API-key query parameter. Anthropic uses the official `/models` and `/messages` contract with `x-api-key` and `anthropic-version` headers. Model names are never invented: returned models appear in the selector; providers that report discovery unavailable expose a manual model field.
-
-Cloud providers require credentials supplied by the user. Keys are accepted by the server only, masked in provider status, and never placed in frontend `VITE_*` variables. Provider configurations are held in the running server process for this prototype; production deployment should replace this with encrypted per-user credential storage and authentication.
-
-If no provider is configured, Ask CodePulse uses deterministic evidence mode. If an active provider fails, the UI says `AI provider unavailable.` and offers Retry, Switch Provider, or Continue without AI. CodePulse does not silently switch providers or spend another user's credentials; it returns an evidence-backed fallback.
-
-## API surface
-
-| Method | Endpoint | Purpose |
-|---|---|---|
-| GET | `/api/health` | Service health and GitHub-token status |
-| POST | `/api/analyze/github` | Fetch and analyze a public repository URL |
-| GET | `/api/repository/:owner/:repo` | Return a bounded repository snapshot |
-| POST | `/api/ask` | Answer a question from a structured report |
-| POST | `/api/report` | Wrap a report payload with generation metadata |
-| GET | `/api/ai/catalog` | List supported provider types |
-| GET | `/api/ai/providers` | List masked configured providers |
-| POST | `/api/ai/providers` | Add a provider configuration |
-| PUT | `/api/ai/providers/:id` | Update an existing provider configuration |
-| POST | `/api/ai/providers/:id/test` | Test provider connectivity |
-| POST | `/api/ai/providers/:id/models` | Refresh models from the provider |
-| PUT | `/api/ai/providers/:id/model` | Select a returned or manual model |
-| POST | `/api/ai/providers/:id/activate` | Activate a configured provider |
-| DELETE | `/api/ai/providers/:id` | Remove a provider configuration |
-
-## Analysis methodology
-
-The score uses configurable default weights: Code Quality 20%, Architecture 15%, Security 20%, Dependencies 10%, Documentation 10%, Testing 15%, and Maintainability 10%. Scores derive from the fetched snapshot: file and source inventory, detected boundaries, documentation signals, test inventory, dependency manifests, bounded static patterns, and structured findings. The report includes commit SHA, limitations, evidence, and the score status category.
-
-The analysis engine is deliberately conservative. It reports credential-like patterns with masked evidence, suspicious dynamic execution, insecure HTTP patterns, missing visible header policy, malformed dependency manifests, documentation gaps, test gaps, and other review leads. It does not claim compiler-level analysis, live dependency advisories, full repository coverage, or a complete security audit.
-
-## Architecture
+The frontend build uses Vite and outputs:
 
 ```text
-client/src                 React presentation and report UI
-server/github.ts           Bounded GitHub metadata/tree/content fetcher
-server/analysis.ts         Static analyzers, evidence, architecture, scoring
-server/ai.ts               Provider abstraction and secret-safe BYOK state
-server/index.ts            Express routes, caching, Q&A, report boundary
+client/dist
 ```
 
-## Security notes
+---
 
-Never commit `.env` or provider keys. Do not place AI keys in `VITE_*` variables. Review masked findings manually and rotate any credential that may have entered repository history. The prototype has no account system; the in-memory provider configuration is intended for local development and must be replaced with encrypted, authenticated storage before multi-user hosting.
+## 🔮 Future Improvements
 
-## Demo Mode
+Potential future versions could include:
 
-The `acme-labs/checkout-service` example remains deterministic and works without network access. When GitHub or the analysis service is unavailable, CodePulse clearly switches to Demo Analysis and states that sample findings do not represent the entered repository. Demo findings are not merged into live reports.
+* Private GitHub repository support
+* GitHub OAuth
+* Historical repository health tracking
+* Pull-request analysis
+* CI/CD integration
+* GitHub Actions integration
+* Automated issue creation
+* Code-quality trend graphs
+* Team dashboards
+* Organization-wide repository monitoring
+* Deeper vulnerability intelligence
+* More language-specific static analysis
+* AI-generated remediation patches
 
-## Roadmap
+---
 
-The next production steps are authentication and encrypted per-user provider storage, persistent cache storage, background analysis jobs, real advisory database integration, parser-backed language analysis, streamed AI responses, and repository commit comparison.
+## 🎓 Project Purpose
+
+CodePulse was built as a practical exploration of how **AI + static analysis + repository intelligence** can help developers understand software projects faster.
+
+The project focuses on turning raw repository data into information that developers can actually use.
+
+---
+
+## 👨‍💻 Author
+
+**Sandarsh Jeriopothula**
+
+B.Tech Computer Science & Engineering
+Vignana Bharathi Institute of Technology, Hyderabad
+
+**Portfolio:**
+https://sandarshjeripothula.netlify.app/
+
+---
+
+## ⭐ Support
+
+If you find CodePulse interesting:
+
+* ⭐ Star the repository
+* 🐛 Report an issue
+* 💡 Suggest an improvement
+* 🔀 Contribute
+* 📢 Share it with other developers
+
+---
+
+## 📄 License
+
+See the repository license for usage and distribution details.
